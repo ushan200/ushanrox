@@ -1,54 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing Agency</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Password Protected Page</title>
+    <link rel="stylesheet"href="style.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-blue-600 text-white py-4">
-        <div class="container mx-auto flex justify-between items-center px-6">
-            <h1 class="text-3xl font-bold">Digital Boost</h1>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                    <li><a href="#services" class="hover:text-gray-300">Services</a></li>
-                    <li><a href="#about" class="hover:text-gray-300">About</a></li>
-                    <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-                </ul>
-            </nav>
+<body>
+    <h1>පාස්වර්ඩ් එක ඇතුලත් කරන්න</h1>
+    <input type="password" id="passwordInput" placeholder="පාස්වර්ඩ් එක ඇතුලත් කරන්න">
+    <button onclick="checkPassword()">ඇතුල් වන්න</button>
+
+    <div id="errorMessage" style="color: red; margin-top: 10px;"></div>
+
+    <!-- Hidden Section -->
+    <div id="content" class="hidden">
+        <h2>ඔබගේ සමාජ මාධ්‍ය ලින්ක්</h2>
+        <div class="links">
+            <a href="https://www.facebook.com/YourUsername" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/@YourChannelName" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@YourUsername" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/YourUsername" target="_blank">Instagram</a>
+            <a href="https://twitter.com/YourUsername" target="_blank">Twitter</a>
         </div>
-    </header>
-    
-    <section class="bg-blue-500 text-white text-center py-20">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold mb-4">Boost Your Business Online</h2>
-            <p class="text-lg mb-6">We help businesses grow with powerful digital marketing strategies.</p>
-            <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-gray-200">Get Started</a>
-        </div>
-    </section>
-    
-    <section id="services" class="py-16 container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <h3 class="text-xl font-bold mb-3">SEO Optimization</h3>
-                <p>Improve your search engine ranking and get more organic traffic.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <h3 class="text-xl font-bold mb-3">Social Media Marketing</h3>
-                <p>Engage and grow your audience on social media platforms.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <h3 class="text-xl font-bold mb-3">Content Marketing</h3>
-                <p>Create compelling content that drives engagement and sales.</p>
-            </div>
-        </div>
-    </section>
-    
-    <footer class="bg-blue-600 text-white text-center py-4 mt-10">
-        <p>&copy; 2025 Digital Boost. All rights reserved.</p>
-    </footer>
+    </div>
+
+    <script>
+        // Set your password here
+        const correctPassword ="2005"; // Change this to your desired password
+
+        function checkPassword() {
+            const enteredPassword = document.getElementById("passwordInput").value;
+            const errorMessage = document.getElementById("errorMessage");
+            const content = document.getElementById("content");
+
+            if (enteredPassword === correctPassword) {
+                errorMessage.textContent = ""; // Clear error message
+                content.classList.remove("hidden"); // Show the links
+            } else {
+                errorMessage.textContent = "වැරදි පාස්වර්ඩ් එකක් ඇතුලත් කර ඇත!";
+            }
+        }
+    </script>
 </body>
 </html>
