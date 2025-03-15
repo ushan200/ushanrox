@@ -1,68 +1,30 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
+    <body class="background"id="background"></body>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected Page</title>
-    <link rel="stylesheet"href="style.css"/>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .hidden {
-            display: none;
-        }
-        .links {
-            margin-top: 20px;
-        }
-        a {
-            display: block;
-            margin: 10px 0;
-            color: blue;
-            text-decoration: underline;
-        }
-    </style>
+    <title>3D Object Gallery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">Hey, I'm Ushan</header> 
-    
-    <h1>පාස්වර්ඩ් එක ඇතුලත් කරන්න</h1>
-    <input type="password" id="passwordInput" placeholder="පාස්වර්ඩ් එක ඇතුලත් කරන්න">
-    <button onclick="checkPassword()">ඇතුල් වන්න</button>
-
-    <div id="errorMessage" style="color: red; margin-top: 10px;"></div>
-
-    <!-- Hidden Section -->
-    <div id="content" class="hidden">
-        <h2>ඔබගේ සමාජ මාධ්‍ය ලින්ක්</h2>
-        <div class="links">
-            <a href="https://www.facebook.com/share/12EErQpyBvW/" target="_blank">Facebook</a>
-            <a href="https://youtube.com/@usmusicstudio6584?si=Zjdw46EsIp0jYHY3" target="_blank">YouTube</a>
-            <a href="https://www.tiktok.com/@YourUsername" target="_blank">TikTok</a>
-            <a href="https://www.instagram.com/YourUsername" target="_blank">Instagram</a>
-            <a href="https://twitter.com/YourUsername" target="_blank">Twitter</a>
+    <div class="container">
+        <h3>Hey I'm Ushan</h3>
+        <p>This is my First Web Page</p>
+        <h1>Select a 3D Object</h1>
+        <h2>Select an Object to Explore</h2>
+        <div class="grid-container">
+            <a href="3d-viewer.html?object=cube" class="object-box">Cube</a>
+            <a href="3d-viewer.html?object=sphere" class="object-box">Sphere</a>
+            <a href="3d-viewer.html?object=cone" class="object-box">Cone</a>
+            <a href="3d-viewer.html?object=cylinder" class="object-box">Cylinder</a>
+            <a href="3d-viewer.html?object=torus" class="object-box">Torus</a>
+            <a href="3d-viewer.html?object=octahedron" class="object-box">Octahedron</a>
+            <a href="3d-viewer.html?object=dodecahedron" class="object-box">Dodecahedron</a>
+            <a href="3d-viewer.html?object=icosahedron" class="object-box">Icosahedron</a>
+            <a href="3d-viewer.html?object=pyramid" class="object-box">Pyramid</a>
+            <a href="3d-viewer.html?object=prism" class="object-box">Prism</a>
         </div>
     </div>
-
-    <script>
-        // Set your password here
-        const correctPassword ="2005"; // Change this to your desired password
-
-        function checkPassword() {
-            const enteredPassword = document.getElementById("passwordInput").value;
-            const errorMessage = document.getElementById("errorMessage");
-            const content = document.getElementById("content");
-
-            if (enteredPassword === correctPassword) {
-                errorMessage.textContent = ""; // Clear error message
-                content.classList.remove("hidden"); // Show the links
-            } else {
-                errorMessage.textContent = "වැරදි පාස්වර්ඩ් එකක් ඇතුලත් කර ඇත!";
-            }
-        }
-    </script>
 </body>
 </html>
